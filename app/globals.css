@@ -13,48 +13,22 @@
 @tailwind utilities;
 
 /* =============================
-   Root Variables (Light Mode - Warm Yellow)
+   Dark Mode Variables (Warm Yellow)
+   (Now the default theme)
 ============================= */
 :root {
-  --background: #fffdf6;   /* warm pale cream */
-  --foreground: #1e1a0d;   /* soft dark brown */
-
-  /* Warm Yellow Accents */
-  --sun: #ffcc33;   /* golden yellow */
-  --amber: #f4b400; /* strong amber */
-  --honey: #ffd166; /* honey yellow */
-
   --grid-size: 22px;
-  --grid-line: rgba(0, 0, 0, 0.03);
-  --grid-major: rgba(0, 0, 0, 0.06);
 
-  /* Surfaces */
-  --surface-1000: #ffffff;
-  --surface-800: #1a160b;
-  --surface-900: #fff8e6;
-
-  /* Typography */
-  --font-sans: 'Inter', Arial, sans-serif;
-  --font-heading: 'DM Serif Display', serif;
-  --font-display: 'DM Serif Display', serif;
-
-  --text-on-surface: var(--foreground);
-  --bg-on-surface: var(--surface-1000);
-}
-
-/* =============================
-   Dark Mode Variables (Warm Yellow)
-============================= */
-html.dark {
+  /* Defaults to dark theme */
   --background: #1a1408;   /* deep espresso brown */
   --foreground: #f9f4e6;   /* warm soft cream */
 
   /* Muted yellow accents */
-  --sun: #f1e516;   /* golden amber */
-  --amber: #f1e516; /* darker amber */
-  --honey: #f1e516; /* warm yellow glow */
+  --sun: #f1e516;
+  --amber: #f1e516;
+  --honey: #f1e516;
 
-  /* Softer grid lines */
+  /* Grid lines */
   --grid-line: rgba(255, 245, 200, 0.04);
   --grid-major: rgba(255, 245, 200, 0.07);
 
@@ -118,25 +92,14 @@ body::before {
   border-radius: 0 0 30% 30% / 0 0 80% 100%;
   background: radial-gradient(
     ellipse at 100% 100%,
-    rgba(255, 220, 100, 0.4),  /* warm yellow */
-    rgba(255, 200, 60, 0.35),  /* amber yellow */
-    rgba(255, 240, 150, 0.25), /* soft cream gold */
+    rgba(255, 220, 100, 0.4),
+    rgba(255, 200, 60, 0.35),
+    rgba(255, 240, 150, 0.25),
     transparent 70%
   );
   filter: blur(90px);
   z-index: 0;
   pointer-events: none;
-}
-
-/* Dark mode aurora tweak */
-html.dark body::before {
-  background: radial-gradient(
-    ellipse at 50% 100%,
-    rgba(230, 180, 50, 0.45),  /* deep amber */
-    rgba(255, 210, 80, 0.35),  /* golden glow */
-    rgba(255, 240, 170, 0.25), /* soft yellow */
-    transparent 80%
-  );
 }
 
 /* =============================
@@ -154,7 +117,7 @@ button, .btn {
   color: #1e1a0d;
 }
 .btn-primary:hover {
-  background-color: var(--amber); /* richer amber */
+  background-color: var(--amber);
   color: #fff;
   transform: translateY(-1px);
 }

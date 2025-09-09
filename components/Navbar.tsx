@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronLeft, Send } from "lucide-react";
-import { FiMoon, FiSun } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import UpperNavbar from "./UpperNavbar";
 
@@ -14,7 +13,6 @@ type Position = { left: number; width: number; opacity: number };
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
   const [hoverPos, setHoverPos] = useState<Position>({ left: 0, width: 0, opacity: 0 });
   const [activePos, setActivePos] = useState<Position>({ left: 0, width: 0, opacity: 1 });
 
@@ -34,19 +32,6 @@ export default function Navbar() {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(prefers-color-scheme: dark)");
-    const applyTheme = () => setDarkMode(mq.matches);
-    applyTheme();
-
-    mq.addEventListener("change", applyTheme);
-    return () => mq.removeEventListener("change", applyTheme);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-  }, [darkMode]);
 
   const navBgClass = isScrolled
     ? "bg-[var(--background)] text-[var(--foreground)] backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-gray-700"
@@ -86,7 +71,7 @@ export default function Navbar() {
         </Link>
 
         {/* ✅ Desktop Nav (Centered) */}
-        <div className="hidden md:flex flex-1 ml-32 justify-center">
+        <div className="hidden md:flex flex-1 ml-23 justify-center">
           <ul
             onMouseLeave={() => setHoverPos({ ...hoverPos, opacity: 0 })}
             className="relative flex mt-2 w-fit rounded-full border border-gray-300 dark:border-gray-600 p-0.5 bg-[var(--background)]"
@@ -108,10 +93,6 @@ export default function Navbar() {
 
         {/* Right Actions (Desktop only) */}
         <div className="hidden md:flex items-center gap-3">
-          <SliderToggle
-            selected={darkMode ? "dark" : "light"}
-            setSelected={(mode) => setDarkMode(mode === "dark")}
-          />
           <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
             <Link
               href="/contact"
@@ -219,41 +200,4 @@ const Cursor = ({ position }: CursorProps) => (
     transition={{ type: "spring", damping: 20, stiffness: 300 }}
     className="absolute z-0 h-full rounded-full bg-[var(--sun)] group-hover:bg-[var(--amber)]"
   />
-);
-
-// --------------------- SliderToggle ---------------------
-const TOGGLE_CLASSES =
-  "text-xs font-medium flex items-center gap-1.5 px-3 py-1.5 relative z-10";
-
-type SliderToggleProps = {
-  selected: "light" | "dark";
-  setSelected: (mode: "light" | "dark") => void;
-};
-
-const SliderToggle = ({ selected, setSelected }: SliderToggleProps) => (
-  <div className="relative flex w-fit items-center rounded-full border border-gray-300 dark:border-gray-600 bg-gray-200 dark:bg-gray-700 overflow-hidden">
-    <button
-      className={`${TOGGLE_CLASSES} ${selected === "light" ? "text-black" : "text-slate-400"}`}
-      onClick={() => setSelected("light")}
-    >
-      <FiSun /> Light
-    </button>
-    <button
-      className={`${TOGGLE_CLASSES} ${selected === "dark" ? "text-black" : "text-slate-400"}`}
-      onClick={() => setSelected("dark")}
-    >
-      <FiMoon /> Dark
-    </button>
-    <div
-      className={`absolute inset-0 z-0 flex ${
-        selected === "dark" ? "justify-end" : "justify-start"
-      }`}
-    >
-      <motion.span
-        layout
-        transition={{ type: "spring", damping: 15, stiffness: 250 }}
-        className="h-full w-1/2 rounded-full bg-gradient-to-r from-[#f1e516] to-[#f1e516]"
-      />
-    </div>
-  </div>
 );
