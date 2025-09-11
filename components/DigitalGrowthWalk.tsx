@@ -216,7 +216,7 @@ export default function DigitalGrowthWalk() {
                     color: "var(--background)"
                   }}
                 >
-                  Join Us Now
+                  JOIN US NOW
                 </motion.a>
               </div>
             </div>
