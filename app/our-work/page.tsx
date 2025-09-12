@@ -268,8 +268,8 @@ export default function OurWorkPage() {
                 onChange={(e) => setSortBy(e.target.value as SortKey)}
                 className="appearance-none rounded-xl bg-[var(--surface-900,#fff8e6)] border border-[var(--grid-line,rgba(0,0,0,0.03))] py-2.5 pl-3 pr-9 text-sm focus:ring-2 focus:ring-[var(--sun,#ffcc33)]/40"
               >
-                <option value="newest">Newest first</option>
-                <option value="oldest">Oldest first</option>
+                <option value="newest">New first</option>
+                <option value="oldest">Old first</option>
                 <option value="brand-az">Brand A–Z</option>
                 <option value="brand-za">Brand Z–A</option>
               </select>
