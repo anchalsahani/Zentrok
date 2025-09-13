@@ -71,7 +71,7 @@ export default function Navbar() {
         </Link>
 
         {/* ✅ Desktop Nav (Centered) */}
-        <div className="hidden md:flex flex-1 ml-23 justify-center">
+        <div className="hidden md:flex flex-1 ml-5 justify-center">
           <ul
             onMouseLeave={() => setHoverPos({ ...hoverPos, opacity: 0 })}
             className="relative flex mt-2 w-fit rounded-full border border-gray-300 dark:border-gray-600 p-0.5 bg-[var(--background)]"
