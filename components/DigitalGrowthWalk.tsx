@@ -176,7 +176,7 @@ export default function DigitalGrowthWalk() {
           <div className="col-span-5">
             <div className="mx-auto max-w-md">
               <p className="text-sm md:text-base opacity-80 mb-6" style={{ color: fg }}>
-                Progress compounding—one step at a time. Your brand scales as the
+                Progress compounding one step at a time. Your brand scales as the
                 foundation strengthens.
               </p>
 

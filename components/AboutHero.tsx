@@ -24,7 +24,7 @@ export default function AboutHero() {
 
           {/* Heading */}
           <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-snug sm:leading-tight">
-            We build culture-driving campaigns that make brands unforgettable.
+            We build culture driving campaigns that make brands unforgettable.
             <span className="block mt-3 sm:mt-4 text-lg sm:text-2xl text-[var(--amber)]">
               Strategy. Story. Scalable growth.
             </span>
