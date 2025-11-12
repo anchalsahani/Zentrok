@@ -7,17 +7,19 @@ import {
   FaInstagram,
   FaLinkedin,
   FaFacebook,
-  FaTwitter,
+  FaYoutube,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6"
 import { motion } from "framer-motion";
 
 // Social icons with their brand colors
 const socialIcons = [
-  { Icon: FaWhatsapp, link: "https://wa.me/919211870764", color: "#25D366" }, // WhatsApp green
-  { Icon: FaInstagram, link: "https://www.instagram.com/zentrok_/", color: "#E4405F" }, // Instagram pink
-  { Icon: FaLinkedin, link: "https://linkedin.com/", color: "#0077B5" }, // LinkedIn blue
-  { Icon: FaFacebook, link: "https://www.facebook.com/profile.php?id=61579906194112", color: "#1877F2" }, // Facebook blue
-  { Icon: FaTwitter, link: "https://x.com/Zentrok_05", color: "#1DA1F2" }, // Twitter light blue
+  { Icon: FaWhatsapp, link: "https://wa.me/8826360287", color: "#25D366" },
+  { Icon: FaInstagram, link: "https://www.instagram.com/zentrok_/", color: "#E4405F" }, 
+  { Icon: FaLinkedin, link: "http://www.linkedin.com/in/zentrok-private-limited", color: "#0077B5" }, 
+  { Icon: FaFacebook, link: "https://www.facebook.com/profile.php?id=61579906194112", color: "#1877F2" }, 
+  { Icon: FaXTwitter, link: "https://x.com/Zentrok_05", color: "#fffff" },
+  { Icon: FaYoutube, link: "https://youtube.com/@zentrokpvtltd-s5l?si=1cID75lxCF2YDpr5", color: "#F54927" }, 
 ];
 
 const UpperNavbar: React.FC = () => {

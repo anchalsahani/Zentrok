@@ -7,11 +7,13 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
+  FaYoutube,
   FaBullhorn,
   FaChartLine,
   FaSearchDollar,
   FaUsers,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6"
 
 const MarketingFooter: React.FC = () => {
   const navLinks = [
@@ -23,10 +25,11 @@ const MarketingFooter: React.FC = () => {
   ];
 
   const socials = [
-    { Icon: FaFacebookF, href: "#", color: "#1877F2" },
-    { Icon: FaTwitter, href: "#", color: "#1DA1F2" },
-    { Icon: FaInstagram, href: "#", color: "#E4405F" },
-    { Icon: FaLinkedinIn, href: "#", color: "#0077B5" },
+    { Icon: FaFacebookF, href: "https://www.facebook.com/profile.php?id=61579906194112", color: "#1877F2" },
+    { Icon: FaXTwitter, href: "https://x.com/Zentrok_05", color: "#ffffff" },
+    { Icon: FaInstagram, href: "https://www.instagram.com/zentrok_?igsh=d3Bsb2U5b3dkYWg0", color: "#E4405F" },
+    { Icon: FaLinkedinIn, href: "http://www.linkedin.com/in/zentrok-private-limited", color: "#0077B5" },
+    { Icon: FaYoutube, href: "https://youtube.com/@zentrokpvtltd-s5l?si=1cID75lxCF2YDpr5", color: "#F54927" },
   ];
 
   const marketingIcons = [

@@ -11,10 +11,8 @@ import UpperNavbar from "./UpperNavbar";
 type Position = { left: number; width: number; opacity: number };
 
 export default function Navbar() {
-  const fg = "var(--foreground)";
   const sun = "var(--sun)";
   const amber = "var(--amber)";
-  const honey = "var(--honey)";
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
