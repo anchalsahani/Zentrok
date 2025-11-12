@@ -75,7 +75,7 @@ export default function Navbar() {
         <div className="hidden md:flex flex-1 ml-5 justify-center items-center">
           <ul
             onMouseLeave={() => setHoverPos({ ...hoverPos, opacity: 0 })}
-            className="relative flex w-fit rounded-full border border-gray-300 dark:border-gray-600 p-0.5 bg-[var(--background)]"
+            className="relative flex w-fit rounded-full mt-1 border border-gray-300 dark:border-gray-600 p-0.5 bg-[var(--background)]"
           >
             {navLinks.map(({ href, label }) => (
               <NavTab
