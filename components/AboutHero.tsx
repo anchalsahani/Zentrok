@@ -40,12 +40,12 @@ export default function AboutHero() {
           <div className="mt-5 flex flex-col sm:flex-row gap-4 items-center justify-center">
             <Link
               href="/our-work"
-              className="w-full sm:w-auto flex items-center gap-2 border border-[var(--honey)] text-[var(--honey)] font-semibold px-5 py-3 rounded-full ] hover:text-[var(--foreground)] transition-transform hover:-translate-y-0.5 group"
+              className="w-full sm:w-auto flex items-center gap-2 border border-[var(--honey)] text-[var(--honey)] font-semibold px-5 py-3 rounded-full ] hover:text-[var(--background)] hover:bg-[var(--honey)] hover:border-[var(--honey)] hover:shadow-[] transition-transform hover:-translate-y-0.5 group"
             >
               <span>See case studies</span>
               <Send
                 size={16}
-                className="transition-transform duration-300 ease-in-out opacity-0 group-hover:opacity-100 group-hover:translate-x-1"
+                className="transition-transform duration-300 ease-in-out group-hover:opacity-100 group-hover:translate-x-1"
               />
             </Link>
           </div>

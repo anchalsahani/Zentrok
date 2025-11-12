@@ -55,11 +55,10 @@ export default function Hero() {
   return (
     <motion.section
       className="
-        relative flex flex-col items-center text-center
-        px-4 sm:px-6 
-        pt-10 sm:pt-20 pb-12 sm:pb-20 
-        min-h-screen
-        justify-center sm:justify-start
+        relative flex flex-col items-center justify-center text-center
+        mt-20 px-4 sm:px-6
+        pt-20 sm:pt-20 pb-12 sm:pb-20 
+        sm:justify-start
         overflow-hidden
       "
     >
@@ -150,7 +149,7 @@ export default function Hero() {
           <span className="relative z-10">Get Started</span>
           <Send
             size={18}
-            className="absolute right-3 xs:right-4 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out z-10"
+            className="absolute right-3 xs:right-4 group-hover:opacity-100 transition-all duration-300 ease-in-out z-10"
           />
         </MotionLink>
 
@@ -172,7 +171,7 @@ export default function Hero() {
           <span className="relative z-10">View Our Work</span>
           <Eye
             size={18}
-            className="absolute right-3 xs:right-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 ease-in-out z-10"
+            className="absolute right-3 xs:right-4 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 ease-in-out z-10"
           />
         </MotionLink>
         

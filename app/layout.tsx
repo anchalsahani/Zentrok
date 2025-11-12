@@ -6,9 +6,9 @@ export const metadata: Metadata = {
   title: "Zentrok",
   description: "Creative Digital Marketing Agency",
   icons: {
-    icon: "/favicon.svg",        // Default favicon
-    apple: "/favicon.svg",       // iOS devices
-    shortcut: "/favicon.svg",    // Legacy support
+    icon: "/favicon.png",        // Default favicon
+    apple: "/favicon.png",       // iOS devices
+    shortcut: "/favicon.png",    // Legacy support
   },
   metadataBase: new URL("https://www.zentrok.com"), // Replace with your domain
   openGraph: {

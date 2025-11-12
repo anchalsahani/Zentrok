@@ -11,10 +11,23 @@ import UpperNavbar from "./UpperNavbar";
 type Position = { left: number; width: number; opacity: number };
 
 export default function Navbar() {
+  const fg = "var(--foreground)";
+  const sun = "var(--sun)";
+  const amber = "var(--amber)";
+  const honey = "var(--honey)";
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [hoverPos, setHoverPos] = useState<Position>({ left: 0, width: 0, opacity: 0 });
-  const [activePos, setActivePos] = useState<Position>({ left: 0, width: 0, opacity: 1 });
+  const [hoverPos, setHoverPos] = useState<Position>({
+    left: 0,
+    width: 0,
+    opacity: 0,
+  });
+  const [activePos, setActivePos] = useState<Position>({
+    left: 0,
+    width: 0,
+    opacity: 1,
+  });
 
   const pathname = usePathname();
 
@@ -46,35 +59,23 @@ export default function Navbar() {
 
       <div className="max-w-screen-xl mx-auto flex justify-between items-center px-6 py-3">
         {/* Logo */}
-        <Link href="/" className="flex pb-3 items-center gap-0">
+        <Link
+          href="/"
+          className="flex justify-center items-center h-full gap-0"
+        >
           <Image
-            src="/favicon.svg"
+            src="/zentrokLogo.png"
             alt="ZENTROK Logo"
-            width={45}
-            height={45}
-            className="rounded-md"
+            width={100}
+            height={100}
           />
-          <div className="flex flex-col leading-none relative">
-            <span
-              className="text-xl font-extrabold tracking-widest text-[var(--foreground)]"
-              style={{ fontFamily: "'Seven Swordsmen BB', sans-serif" }}
-            >
-              ZENTROK
-            </span>
-            <span
-              className="absolute right-0 text-[10px] mt-6 font-medium text-[var(--foreground)]"
-              style={{ fontFamily: "'Seven Swordsmen BB', sans-serif" }}
-            >
-              Pvt.Ltd.
-            </span>
-          </div>
         </Link>
 
         {/* ✅ Desktop Nav (Centered) */}
-        <div className="hidden md:flex flex-1 ml-5 justify-center">
+        <div className="hidden md:flex flex-1 ml-5 justify-center items-center">
           <ul
             onMouseLeave={() => setHoverPos({ ...hoverPos, opacity: 0 })}
-            className="relative flex mt-2 w-fit rounded-full border border-gray-300 dark:border-gray-600 p-0.5 bg-[var(--background)]"
+            className="relative flex w-fit rounded-full border border-gray-300 dark:border-gray-600 p-0.5 bg-[var(--background)]"
           >
             {navLinks.map(({ href, label }) => (
               <NavTab
@@ -93,18 +94,25 @@ export default function Navbar() {
 
         {/* Right Actions (Desktop only) */}
         <div className="hidden md:flex items-center gap-3">
-          <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}>
-            <Link
+          <div className="mt-6">
+            <motion.a
               href="/contact"
-              className="relative overflow-hidden flex items-center px-4 py-2 rounded-full font-semibold shadow-lg hover:shadow-xl group transition-all duration-300 pr-9 bg-[var(--foreground)] text-[var(--background)]"
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 5px 15px rgba(255, 200, 60, 0.4)",
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-primary inline-flex items-center rounded-full px-6 py-3 text-base font-semibold shadow-md transition-all"
+              style={{
+                background: `linear-gradient(135deg, ${sun}, ${amber})`,
+                color: "var(--background)",
+              }}
             >
-              <span className="relative z-10">Let&apos;s Work</span>
-              <Send
-                size={16}
-                className="absolute right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out z-10"
-              />
-            </Link>
-          </motion.div>
+              <span className="flex items-center gap-2">Let&apos;s Work<Send size={16}/>
+              </span>
+              
+            </motion.a>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -116,7 +124,9 @@ export default function Navbar() {
           >
             <ChevronLeft
               size={14}
-              className={`transition-transform ${mobileMenuOpen ? "rotate-0" : "-rotate-180"}`}
+              className={`transition-transform ${
+                mobileMenuOpen ? "rotate-0" : "-rotate-180"
+              }`}
             />
           </button>
 
@@ -158,7 +168,13 @@ type NavTabProps = {
   isActive: boolean;
 };
 
-const NavTab = ({ href, children, setHoverPos, setActivePos, isActive }: NavTabProps) => {
+const NavTab = ({
+  href,
+  children,
+  setHoverPos,
+  setActivePos,
+  isActive,
+}: NavTabProps) => {
   const ref = useRef<HTMLLIElement | null>(null);
 
   useEffect(() => {
@@ -196,7 +212,11 @@ const NavTab = ({ href, children, setHoverPos, setActivePos, isActive }: NavTabP
 type CursorProps = { position: Position };
 const Cursor = ({ position }: CursorProps) => (
   <motion.li
-    animate={{ left: position.left, width: position.width, opacity: position.opacity }}
+    animate={{
+      left: position.left,
+      width: position.width,
+      opacity: position.opacity,
+    }}
     transition={{ type: "spring", damping: 20, stiffness: 300 }}
     className="absolute z-0 h-full rounded-full bg-[var(--sun)] group-hover:bg-[var(--amber)]"
   />

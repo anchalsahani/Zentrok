@@ -90,9 +90,17 @@ const NotificationsContainer: React.FC<NotificationsContainerProps> = ({
 
 /* ------------------- SOCIAL LINKS ------------------- */
 const socialLinks = [
-  { Icon: FaFacebook, link: "https://www.facebook.com/profile.php?id=61579906194112", color: "#1877F2" }, // Facebook Blue
+  {
+    Icon: FaFacebook,
+    link: "https://www.facebook.com/profile.php?id=61579906194112",
+    color: "#1877F2",
+  }, // Facebook Blue
   { Icon: FaTwitter, link: "https://x.com/Zentrok_05", color: "#1DA1F2" }, // Twitter Blue
-  { Icon: FaInstagram, link: "https://www.instagram.com/zentrok_/", color: "#E4405F" }, // Instagram Pink
+  {
+    Icon: FaInstagram,
+    link: "https://www.instagram.com/zentrok_/",
+    color: "#E4405F",
+  }, // Instagram Pink
   { Icon: FaLinkedin, link: "#", color: "#0A66C2" }, // LinkedIn Blue
 ];
 
@@ -194,28 +202,23 @@ export default function ContactPage() {
               className="p-3 border rounded-lg w-full bg-[var(--surface-900)] border-[var(--honey)] focus:outline-none focus:border-[var(--sun)]"
             ></textarea>
 
-            <motion.div
+            <motion.button
+              type="submit"
+              disabled={isLoading}
               whileHover={{ scale: isLoading ? 1 : 1.04 }}
               whileTap={{ scale: isLoading ? 1 : 0.96 }}
+              className="group relative overflow-hidden rounded-full flex items-center px-6 py-3 bg-[var(--sun)] text-[var(--background)] font-semibold shadow-lg hover:bg-[var(--amber)] hover:text-[var(--background)] transition-all duration-300 pr-10 disabled:bg-gray-500 disabled:cursor-not-allowed"
             >
-              <button
-                type="submit"
-                disabled={isLoading}
-                className="group relative overflow-hidden flex items-center px-6 py-3 rounded-full bg-[var(--sun)] text-[var(--foreground)] font-semibold shadow-lg hover:bg-[var(--amber)] hover:text-white transition-all duration-300 pr-10 disabled:bg-gray-500 disabled:cursor-not-allowed"
-              >
-                <span className="relative z-10 mr-4">
-                  {isLoading ? "Sending..." : "Send Message"}
-                </span>
-                <Send
-                  size={18}
-                  className={`absolute right-3 z-10 transition-all duration-300 ease-in-out ${
-                    isLoading
-                      ? "opacity-0"
-                      : "opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-2"
-                  }`}
-                />
-              </button>
-            </motion.div>
+              <span className="relative z-10 mr-4">
+                {isLoading ? "Sending..." : "Send Message"}
+              </span>
+              <Send
+                size={18}
+                className={`absolute right-3 z-10 ${
+                  isLoading ? "opacity-0" : ""
+                }`}
+              />
+            </motion.button>
           </form>
         </motion.div>
 

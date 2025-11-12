@@ -41,7 +41,7 @@ export default function PremiumCTA() {
     },
     buttonHover: {
       backgroundColor: "var(--honey)",
-      color: "var(--foreground)",
+      color: "var(--background)",
     },
   };
 
@@ -78,7 +78,7 @@ export default function PremiumCTA() {
         {/* CTA Button */}
         <Link href="/contact" passHref>
           <motion.a
-            className="inline-flex items-center justify-center font-semibold py-3 px-6 rounded-full shadow-md relative overflow-hidden group transition-all duration-300"
+            className="inline-flex items-center justify-center font-semibold py-3 px-6 rounded-full shadow-md relative overflow-hidden group transition-all hover:text-black duration-300"
             style={styles.button}
             whileHover={{
               scale: 1.04,
@@ -87,10 +87,10 @@ export default function PremiumCTA() {
             }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="relative z-10 mr-5">Get Started</span>
+            <span className="relative z-10 mr-5 ">Get Started</span>
             <ArrowRight
               size={20}
-              className="absolute right-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 ease-in-out"
+              className="absolute right-4 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 ease-in-out"
             />
           </motion.a>
         </Link>
