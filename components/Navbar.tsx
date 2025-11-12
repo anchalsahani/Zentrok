@@ -94,7 +94,7 @@ export default function Navbar() {
 
         {/* Right Actions (Desktop only) */}
         <div className="hidden md:flex items-center gap-3">
-          <div className="mt-6">
+          <div>
             <motion.a
               href="/contact"
               whileHover={{
