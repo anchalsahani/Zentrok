@@ -6,7 +6,7 @@ The project is built using **Next.js**, **TypeScript**, and **Tailwind CSS**, an
 
 ## 🚀 Live Demo
 
-🔗 https://zentrok.vercel.app
+🔗 https://zentrok.com
 
 ## 🧠 About Zentrok
 
@@ -31,15 +31,16 @@ The website aims to generate leads, highlight services, showcase work, and impro
 
 ## 📁 Project Structure
 Zentrok/
-├── app/ # Application pages & layout
-├── components/ # React UI components
-├── public/ # Static assets (images, icons, etc.)
-├── .gitignore
-├── next.config.ts # Next.js configuration
-├── tailwind.config.js # Tailwind CSS config
-├── postcss.config.js # PostCSS config
-├── package.json
-└── tsconfig.json
+├── app/                    # App router pages & layouts
+├── components/             # Reusable UI components
+├── public/                 # Static assets
+├── styles/                 # Global styles (if any)
+├── next.config.ts
+├── tailwind.config.js
+├── postcss.config.js
+├── tsconfig.json
+└── package.json
+
 
 ## 🧩 Features
 
