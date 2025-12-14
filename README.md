@@ -29,18 +29,6 @@ The website aims to generate leads, highlight services, showcase work, and impro
 | **Vercel** | Deployment and hosting |
 | **ESLint + Prettier** | Code formatting and quality |
 
-## 📁 Project Structure
-Zentrok/
-├── app/                    # App router pages & layouts
-├── components/             # Reusable UI components
-├── public/                 # Static assets
-├── styles/                 # Global styles (if any)
-├── next.config.ts
-├── tailwind.config.js
-├── postcss.config.js
-├── tsconfig.json
-└── package.json
-
 
 ## 🧩 Features
 
