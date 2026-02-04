@@ -129,12 +129,12 @@ export default function ContactPage() {
     const payload = {
       name: data.name,
       email: data.email,
-      summary: data.message,
+      message: data.message,
     };
 
     try {
       const response = await fetch(
-        "https://z-backend-neon.vercel.app/api/subscribe/send",
+        "/api/contact",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
